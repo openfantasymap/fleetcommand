@@ -1,0 +1,15 @@
+<div *ngFor="let s of context.ships">
+    <h1>session: {{s.name}}</h1>
+    <table>
+        <tr><th>connecion</th><th>input</th><th>value</th></tr>
+    <tr *ngFor="let c of s.connections">
+        <td>{{session}}/{{s.id}}/{{c.id}}</td>
+        <td>
+            <input *ngIf="c.type==='range'" type="range" [value]="fc.data(s.id,c.id)|async" (change)="send($event, s.id, c.id)" min="0" max="100">
+            <textarea *ngIf="c.type==='list'" (blur)="send($event, s.id, c.id)"></textarea>
+            <button *ngIf="c.type==='button'" value="shoot" (click)="send($event, s.id,c.id)">Toggle</button>
+        </td>
+        <td>{{fc.data(s.id,c.id)|async}}</td>
+    </tr>
+</table>
+</div>

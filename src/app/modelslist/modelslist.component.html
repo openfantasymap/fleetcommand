@@ -1,0 +1,14 @@
+<div class="lcars-row">
+    <div class="lcars-bracket left"></div>
+    <div class="lcars-element lcars-u-2-1">Search</div>
+    <div class="lcars-bracket right"></div>
+</div>
+<div class="lcars-row">
+    <div class="lcars-bracket left"></div>
+    <div class="lcars-column scrollable">
+        <div class="lcars-element lcars-text lcars-u-2-1" *ngFor="let m of models|async" [routerLink]="['/models', m.id]">{{m.name}}</div>
+    </div>
+    <!--<div class="lcars-bracket right"></div>-->
+</div>
+
+

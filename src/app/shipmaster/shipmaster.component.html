@@ -1,0 +1,39 @@
+<div class="lcars-row">
+    <div class="lcars-element left-rounded lcars-u-1-1">
+        <img height="48" src="{{ship.model.operator.icon}}"></div>
+    <div class="lcars-element  lcars-u-2-1 lcars-title">
+        <div class="lcars-element-addition">{{ship.name}}</div>
+    </div>
+    <div class="lcars-element lcars-u-1-1">{{ship.callsign}}</div>
+    <div class="lcars-element lcars-u-1-1">{{ship.model.name}}</div>
+    <div class="lcars-element lcars-u-1-1">{{ship.profile}}</div>
+    <div class="lcars-element lcars-u-1-1">{{ship.canon}}</div>
+
+</div>
+<div class="lcars-row">
+    <div class="lcars-bracket left"></div>
+    <div class="lcars-column">
+        <div class="lcars-row" *ngFor="let m of ship.references">
+            <div class="lcars-element lcars-u-3-1">{{m.source}}</div>
+            <a class="lcars-element lcars-u-4-1" target="_blank" href="{{m.url}}">{{m.url}}</a>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="lcars-row">
+    <div class="lcars-bracket left"></div>
+    <div class="lcars-column">
+        <div class="lcars-row" *ngFor="let m of ship.measures">
+            <div class="lcars-element lcars-u-3-1">{{m.source}}</div>
+            <div class="lcars-element lcars-u-3-1">{{m.measure.label}}</div>
+            <div class="lcars-element lcars-u-1-1">{{m.value}}</div>
+        </div>
+
+    </div>
+</div>
+
+
+
+{{ship|json}}
