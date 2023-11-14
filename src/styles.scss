@@ -72,6 +72,10 @@ body {
   line-height: 41px;
 }
 
+.lcars-element.active{
+  background-color: #ff9;
+}
+
 .scrollable{
   overflow-y: auto;
   max-height: calc(100vh - 121px);

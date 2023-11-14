@@ -9,6 +9,7 @@ import { FleetcommandService } from '../fleetcommand.service';
 export class ModelslistComponent implements OnInit {
 
   models = this.fc.getModels();
+  active="";
 
   constructor(
     private fc: FleetcommandService

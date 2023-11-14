@@ -15,6 +15,8 @@ import { ShipmasterComponent } from './shipmaster/shipmaster.component';
 import { ModelmasterComponent } from './modelmaster/modelmaster.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { QInterceptorService } from './qinterceptor.service';
+import { DebugComponent } from './debug/debug.component';
+import { MetricsComponent } from './metrics/metrics.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: 'mqtt.fantasymaps.org',
@@ -31,7 +33,9 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     ModelslistComponent,
     ShiplistComponent,
     ShipmasterComponent,
-    ModelmasterComponent
+    ModelmasterComponent,
+    DebugComponent,
+    MetricsComponent
   ],
   imports: [
     BrowserModule,

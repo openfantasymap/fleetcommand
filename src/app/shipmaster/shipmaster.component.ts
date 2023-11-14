@@ -9,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShipmasterComponent implements OnInit {
 
+  active:string="";
+
   ship: any = {}
   constructor(
     private ar: ActivatedRoute,

@@ -1,0 +1,32 @@
+<div class="lcars-row" style="margin-top: 5px">
+  <div class="lcars-column">
+    <div class="lcars-row" style="width: calc(100vw - 568px)">
+      <div class="lcars-elbow left-bottom"></div>
+      <div class="lcars-bar horizontal"></div>
+    </div>
+    <div class="lcars-column scrollable-short">
+      <div class="lcars-row pull-up">
+        <div class="lcars-column">
+          <div class="lcars-element lcars-u-1-1" (click)="active=s" *ngFor="let s of sources">{{ s }}</div>
+          <div class="lcars-bar lcars-u-1"></div>
+        </div>
+        <div class="lcars-row">
+          <div class="lcars-bracket left"></div>
+          <div class="lcars-column">
+            <ng-component *ngFor="let m of measures">
+              <div class="lcars-row" *ngIf="active === m.source">
+                <div class="lcars-element lcars-u-1-1">{{ m.source }}</div>
+                <div class="lcars-element lcars-u-3-1">{{ m.measure.label }}</div>
+                <div class="lcars-element lcars-u-1-1">{{ m.value }}</div>
+              </div>
+            </ng-component>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lcars-row">
+      <div class="lcars-elbow left-top"></div>
+      <div class="lcars-bar horizontal bottom"></div>
+    </div>
+  </div>
+</div>
